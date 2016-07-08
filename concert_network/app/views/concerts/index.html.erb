@@ -1,0 +1,22 @@
+<h3> Music Concert Network </h3>
+
+<ul>
+  <% @concerts_array.each do |the_concert| %>
+    <li>
+    	<!-- <a href="/projects/<%= the_concert.id %>"> -->
+      <%= the_concert.artist %>
+      <!-- </a> -->
+
+   <!--    <% if the_concert.description != nil %>
+        - <%= the_concert.description %> -->
+      <% end %>
+    </li>
+
+
+  <% end %>
+
+  <a href="/concerts/new">Add A Concert</a>
+</ul>
+
+
+<!-- ADD A BUTTON TO ADD A CONCERT, IT REDIRECTS TO NEW FORM -->
