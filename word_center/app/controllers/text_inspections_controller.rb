@@ -4,6 +4,12 @@ class TextInspectionsController < ApplicationController
 	end
 
 	def create
-		render plain: params.inspect
+		# So we've got a hash within a hash.
+		@text= params[:text_inspection][:user_text]
+
+		@word_length= @text.split(" ").length
+
+		render 'results.html.erb'
+		
 	end
 end
