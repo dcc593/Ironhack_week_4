@@ -1,6 +1,7 @@
 class ConcertsController < ApplicationController
 	def index
-		@concerts_array=Concert.order(created_at: "desc")
+		@this_months_concerts=Concert.where().order(created_at: "asc")
+		@todays_concerts=Concert.where().order(created_at: "asc")
 		render "index"
 	end
 
@@ -20,6 +21,12 @@ class ConcertsController < ApplicationController
 		@my_concert.save
 
 		redirect_to "/concerts"
+	end
+
+	def show
+		@my_concert=Concert.find(params[:id])
+
+		render "show"
 	end
 end
 

@@ -1,11 +1,13 @@
 <h3> Music Concert Network </h3>
 
+<div>
 <ul>
-  <% @concerts_array.each do |the_concert| %>
+  <h2> Today's Concerts </h2>
+  <% @todays_concerts.each do |the_concert| %>
     <li>
-    	<!-- <a href="/projects/<%= the_concert.id %>"> -->
+    	<a href="/concerts/<%= the_concert.id %>">
       <%= the_concert.artist %>
-      <!-- </a> -->
+      </a>
 
    <!--    <% if the_concert.description != nil %>
         - <%= the_concert.description %> -->
@@ -14,9 +16,24 @@
 
 
   <% end %>
-
   <a href="/concerts/new">Add A Concert</a>
 </ul>
+</div>
 
+ <!-- NEW COLUMN -->
 
-<!-- ADD A BUTTON TO ADD A CONCERT, IT REDIRECTS TO NEW FORM -->
+<div>
+  <h2>List for Upcoming Concerts</h2>
+  <ul>
+      <% @concerts_array.each do |the_concert| %>
+        <li>
+          <a href="/concerts/<%= the_concert.id %>">
+          <%= the_concert.artist %>
+          </a>
+          <% end %>
+        </li>
+
+      <% end %>
+      <a href="/concerts/new">Add A Concert</
+  </ul>
+</div>
